@@ -4,15 +4,20 @@ File:
 
 admin/language/en-gb/design/layout.php
 Find:
-
+```
 $_['text_content_bottom']
+```
 Add before it:
-
+```
 $_['text_content_new']    = 'Content New';
+
+```
+
 File:
 
 admin/view/template/design/layout_form.twig
 Find:
+
 ```
 <table id="module-content-top" class="table table-striped table-bordered table-hover">
 
@@ -91,8 +96,9 @@ Add before it:
 Create the following file:
 
 catalog/controller/common/content_new.php
-it's content:
 
+it's content:
+```
 <?php
 class ControllerCommonContentNew extends Controller {
     public function index() {
@@ -146,29 +152,34 @@ class ControllerCommonContentNew extends Controller {
         return $this->load->view('common/content_new', $data);
     }
 }
+```
 Create the following file:
 
 catalog/view/theme/default/template/common/content_new.twig
 it's content:
-
+```
 {% for module in modules %}
 {{ module }}
 {% endfor %}
 File:
-
+```
 catalog/controller/common/home.php
 Find:
-
+```
 $data['content_top'] = $this->load->controller('common/content_top');
+```
 Add before it:
-
+```
 $data['content_new'] = $this->load->controller('common/content_new');
+```
 File:
 
 catalog/view/theme/default/template/common/home.twig
 Find:
-
+```
 {{ header }}
+```
 Add after it:
-
+```
 {{ content_new }}
+```
