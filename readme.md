@@ -13,10 +13,13 @@ File:
 
 admin/view/template/design/layout_form.twig
 Find:
-
+```
 <table id="module-content-top" class="table table-striped table-bordered table-hover">
+
+```
 Add before it:
 
+```
 <table id="module-content-new" class="table table-striped table-bordered table-hover">
   <thead>
     <tr>
@@ -84,6 +87,7 @@ Add before it:
     </tr>
   </tfoot>
 </table>
+```
 Create the following file:
 
 catalog/controller/common/content_new.php
